@@ -92,9 +92,16 @@ if (bundle) {
   reporters.push('BrowserStack')
   files = files.concat([
     'node_modules/jquery/dist/jquery.slim.min.js',
-    'js/dist/util.js',
-    'js/dist/tooltip.js',
-    'js/dist/!(util|index|tooltip).js' // include all of our js/dist files except util.js, index.js and tooltip.js
+    'js/coverage/dist/dom/eventHandler.js',
+    'js/coverage/dist/dom/selectorEngine.js',
+    'js/coverage/dist/dom/data.js',
+    'js/coverage/dist/dom/manipulator.js',
+    'js/coverage/dist/util.js',
+    'js/coverage/dist/dom/*.js',
+    'js/coverage/dist/tooltip.js',
+    'js/coverage/dist/!(util|index|tooltip).js', // include all of our js/dist files except util.js, index.js and tooltip.js
+    'js/tests/unit/*.js',
+    'js/tests/unit/dom/*.js'
   ])
 } else {
   frameworks.push('detectBrowsers')
@@ -111,8 +118,11 @@ if (bundle) {
     'js/coverage/dist/dom/data.js',
     'js/coverage/dist/dom/manipulator.js',
     'js/coverage/dist/util.js',
+    'js/coverage/dist/dom/*.js',
     'js/coverage/dist/tooltip.js',
-    'js/coverage/dist/!(util|index|tooltip).js' // include all of our js/dist files except util.js, index.js and tooltip.js
+    'js/coverage/dist/!(util|index|tooltip).js', // include all of our js/dist files except util.js, index.js and tooltip.js
+    'js/tests/unit/*.js',
+    'js/tests/unit/dom/*.js'
   ])
   reporters.push('coverage-istanbul')
   conf.customLaunchers = customLaunchers
